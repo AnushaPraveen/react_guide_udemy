@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
   const expenses = [
@@ -30,10 +31,15 @@ function App() {
     },
   ];
 
-  
+  const addExpenseHandler = expense => {
+    console.log('From App.js');
+    console.log(expense);
+
+  }
+
   return (
     <div>
-      <h2>Lets get Started !</h2>
+      <NewExpense onSaveExpense={addExpenseHandler}/>
       <Expenses  expenses={expenses}/>
     </div>
   );
